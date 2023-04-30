@@ -9,7 +9,7 @@ import wolframalpha
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
-activationWord = 'jack'
+activationWord = 'prime'
 
 chrome_path=r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 webbrowser.register('chrome',None,webbrowser.BackgroundBrowser(chrome_path))
@@ -84,7 +84,8 @@ def search_wolframAlpha(query=''):
 
 if __name__=='__main__':
     speak("yes all systems nominal.")
-
+    speak("lets start")
+    speak("  listening for command")
     while True:
         query = parseCommand().lower().split()
 
@@ -94,6 +95,7 @@ if __name__=='__main__':
             if query[0] =='say' or query[0]=='se' or query[0]=='fuck' or query[0]=='dingutha' or query[0]=='venukuth' or query[0]=='dingu tha':
                 if 'hello' in query:
                     speak('yes Hello everyone.')
+                    speak('Nice meeting you all')
                 if 'fuck' in query:
                     speak('yes fuck you asshole')
                 if 'dingutha' in query or 'venkutha' in query or 'dingu tha' in query:
@@ -108,6 +110,8 @@ if __name__=='__main__':
                 speak('Opening...')
                 query=' '.join(query[2:])
                 webbrowser.get('chrome').open_new(query)
+                if 'Balaji' or 'balaji' in query:
+                    webbrowser.get('chrome').open_new('balajireddy.netlify.app')
 
             if query[0] =='wikipedia':
                 query =' '.join(query[1:])
